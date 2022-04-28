@@ -48,3 +48,39 @@ names = [line.rstrip() for line in infile]
 
 
 # main()
+
+
+# a_list = []
+
+# a_set = {}
+
+# a_list.append("A")
+
+# a_set.add("A")
+# a_set.add("B")
+# a_set.add("C")
+# a_set.add("C")
+
+# def main():
+#     words = ["nudge", "nudge", "wink", "wink"]
+#     terms = set(words)
+#     print("terms", terms)
+#     terms.add("wink")
+#     terms.add("new wink")
+#     terms.discard("nudge")
+
+# main()
+
+arr1 = ["Alpha", "Bravo", "Charlie"]
+arr2 = ["Bravo", "Delta"]
+set1 = set(arr1)
+set2 = set(arr2)
+
+print("set1", set1)
+print("set12", set2)
+
+# Built-In Set Methods: 1 .union, 2 .intersection, 3 .difference()
+
+print("union ", set1.union(set2))
+print("intersection ", set1.intersection(set2))
+print("difference ", set1.difference(set2))
