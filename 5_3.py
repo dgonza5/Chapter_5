@@ -12,91 +12,137 @@
 #     "aloz",
 #     "verdi",
 #     "blanco"
-# ]
+# # ]
 
 
-# print("alist", alist[1])
-# print("translate red", translate["white"])
+# # print("alist", alist[1])
+# # print("translate red", translate["white"])
 
-user = {
-    "first_name": "Robert",
-    "last_name": "Smith",
-    "age": 19,
-    "school": {
-        "school_name": "Fresno State",
-        "grade": "Senior",
-        "gpa": 3.5,
-        "completed_courses": [
-            "Programming Fund",
-            "Project Management",
-            "Psychology"
-        ]
-    }
-}
+# user = {
+#     "first_name": "Robert",
+#     "last_name": "Smith",
+#     "age": 19,
+#     "school": {
+#         "school_name": "Fresno State",
+#         "grade": "Senior",
+#         "gpa": 3.5,
+#         "completed_courses": [
+#             "Programming Fund",
+#             "Project Management",
+#             "Psychology"
+#         ]
+#     }
+# }
 
-# print(user["first_name"] + "'s age is: ", user["age"])
-# print("courses", user["school"]["completed_courses"])
-# num_courses = len(user["school"]["completed_courses"])
-# output = user["first_name"] + " goes to " + user["school"]["school_name"] + " and is taking " + str(num_courses) + " classes."
+# # print(user["first_name"] + "'s age is: ", user["age"])
+# # print("courses", user["school"]["completed_courses"])
+# # num_courses = len(user["school"]["completed_courses"])
+# # output = user["first_name"] + " goes to " + user["school"]["school_name"] + " and is taking " + str(num_courses) + " classes."
 
-# print(output)
+# # print(output)
 
-# if "completed_courses" in user:
-#     print("True")
-# else:
-#     print("False")
+# # if "completed_courses" in user:
+# #     print("True")
+# # else:
+# #     print("False")
 
-# print("Original user: ", user)
-# user["school"] = None
-# print("Mutated user: ", user)
+# # print("Original user: ", user)
+# # user["school"] = None
+# # print("Mutated user: ", user)
 
-# school = user.get("school", None)
+# # school = user.get("school", None)
 
-# print("School", school.get("completed_courses"))
+# # print("School", school.get("completed_courses"))
 
-# print("keys: ", user.keys())
-# print("Values: ", user.values())
+# # print("keys: ", user.keys())
+# # print("Values: ", user.values())
 
-# user_data = list(user)
+# # user_data = list(user)
 
-# print("User dictionary converted into a list: ", user_data)
-# print("User dictionary converted into a tuple of key value pairs: ", user.items())
+# # print("User dictionary converted into a list: ", user_data)
+# # print("User dictionary converted into a tuple of key value pairs: ", user.items())
 
-# print("User", user)
-# alist = [1, 2]
+# # print("User", user)
+# # alist = [1, 2]
 
-# aset = set(alist)
+# # aset = set(alist)
 
-# del user["school"]
+# # del user["school"]
 
-# print("User with no school: ", user)
+# # print("User with no school: ", user)
 
-# user.clear()
+# # user.clear()
 
-# print("Cleared user object: ", user)
-original_dict = {}
-dict1 = {
-    "a": "A",
-    "b": "B",
-    "c": "C"
-}
+# # print("Cleared user object: ", user)
+# original_dict = {}
+# dict1 = {
+#     "a": "A",
+#     "b": "B",
+#     "c": "C"
+# }
 
-dict2 = {
-    "c": "C",
-    "d": "D",
-    "e": "E",
-}
+# dict2 = {
+#     "c": "C",
+#     "d": "D",
+#     "e": "E",
+# }
 
-# print("Merged Dictionary", original_dict.update(dict2)) # TODO: check python version
+
+# dict1.update(dict2)
+# print("dict1", dict1)
+# print("Merged Dictionary", original_dict.update(dict2))  # TODO: check python version
+
+# # def main():
+# #     print("Main running...")
+# #     d = {}
+# #     print(d)
+
+# #     d.update(dict2)
+# #     print("d", d)
+
+# #     print("Keys", d.keys())
+# #     print("Values", d.values())
+# # main()
 
 def main():
-    print("Main running...")
-    d = {}
-    print(d)
+    print("from main")
+    create_dictionary("Textese.txt")
 
-    d.update(dict2)
-    print("d", d)
+def create_dictionary(file_name):
+    print("from create_dictionary")
+    infile = open(file_name, "r") # Textese.txt
+    text_list = [ line.rstrip() for line in infile ]
+    infile.close()
+    print("vtext_list", text_list) # []
 
-    print("Keys", d.keys())
-    print("Values", d.values())
+    output = [ x.split(",") for x in text_list ]
+
+    print("output", output)
+
+def translate(sentence, textese_dict):
+    print("from translate")
+
 main()
+
+# def main():
+#     textese_dict = create_dictionary("Textese.txt")
+#     prompt = "Enter a simple sentence in lowercase letters without any punctuation: "
+#     sentence = input(prompt)
+#     translate(sentence, textese_dict)
+
+
+# def create_dictionary(file_name):
+#     infile = open(file_name, "r")
+#     text_list = [line.rstrip() for line in infile]
+#     infile.close()
+#     output = [x.split(",") for x in text_list]
+#     return dict(output)
+
+
+# def translate(sentence, textese_dict):
+#     words = sentence.split()
+#     for word in words:
+#         print(textese_dict.get(word, word) + " ", end="")
+
+
+# main()
